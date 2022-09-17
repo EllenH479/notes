@@ -11,7 +11,7 @@ Please install the required technologies prior the start of that week:
 - **Visual Studio Code**
 
 ### Week 2
-- **PostgreSQL 10**
+- **PostgreSQL**
 - **DBeaver**
 
 ### Week 3
@@ -49,25 +49,28 @@ Once you've verified that you have a compatible version of PowerShell, **launch 
 
 ![Scoop instructions](./images/scoop-instructions.PNG)
 
-As Scoop's installation instructions indicate, you can run one of the following commands in PowerShell (but NOT both of them):
+As Scoop's installation instructions indicate, run the following commands in PowerShell:
 
-Option 1:
+    Set-ExecutionPolicy RemoteSigned -scope CurrentUser # Optional
+    irm -useb get.scoop.sh | iex
 
-    Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+### Step 2: Install Git/Git Bash
 
-Option 2:
+Now that you've installed Scoop open a new terminal and run the following command in order to install Git:
 
-    iwr -useb get.scoop.sh | iex
+    scoop install git
 
-If you run one of these commands and it fails, you'll need to first run the following command:
+After the installation is complete, verify that you have installed Git properly by typing the following in your terminal:
 
-    Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+    git --version
 
-After you've run this command, you should then attempt to run one of the first two commands again.
+You should also be able to open Git Bash from your file explorer.
 
 ### Step 2: Configure Scoop
 
 Scoop comes with a default bucket titled "main". Since some of the required softwares are not contained in this bucket, we'll add some additional buckets to have access to them.
+
+**NOTE**: Scoop requires Git to be installed in order to add buckets.
 
 Open a new terminal and run the following commands (one by one):
 
@@ -75,7 +78,7 @@ Open a new terminal and run the following commands (one by one):
     scoop bucket add java
     scoop bucket add versions
 
-**Note**: If you receive a warning that says that the bucket you're attempting to add already exists, you don't have to worry as this means that you already have that bucket.
+**NOTE**: If you receive a warning that says that the bucket you're attempting to add already exists, you don't have to worry as this means that you already have that bucket.
 
 
 ### Step 3: Install Git/Git Bash
@@ -102,7 +105,7 @@ If the installation was successful, you should be able to search for "Visual Stu
 
 In order to install PostgreSQL, run the following command in your terminal:
 
-    scoop install postgresql10
+    scoop install postgresql
 
 PostgreSQL should now be successfully installed on your computer.
 
@@ -119,6 +122,17 @@ Once started, Postgres will be available:
 - username: postgres
 - password: (empty)
 
+**NOTE:** As of 09/17/22, there is a known Scoop issue regarding the default postgres user after installation.  
+A possible workaround is to delete the content of the ~/scoop/apps/postgresql/current/data folder and run:
+
+    pg_ctl initdb
+
+This will make your current user the username for the newly setup database:
+- url: localhost:5432/postgres
+- username: [your-username]
+- password: (empty)
+
+
 ### Step 6: Install DBeaver
 
 In order to install DBeaver, run the following command in your terminal:
@@ -127,7 +141,7 @@ In order to install DBeaver, run the following command in your terminal:
 
 You can verify that you have installed DBeaver properly by searching for "DBeaver" in your Windows search bar.
 
-## Step 7: Install Java
+### Step 7: Install Java
 
 In order to install Java, run the following command in your terminal:
 
@@ -194,7 +208,7 @@ Do note, however, that setting system environment variables differs from machine
 
 The first thing you'll want to do is open your web browser of choice. This guide will use *Chrome*.
 
-**Note**: Many of the tools that you will install have different system installers that are platform dependent. It is **very** important that you download the correct installer. The following list details how you should choose the installer for a program:
+**NOTE**: Many of the tools that you will install have different system installers that are platform dependent. It is **very** important that you download the correct installer. The following list details how you should choose the installer for a program:
 
 - If you have a 32-bit version of Windows, use the installer that is marked as the 32-bit version.
 - If you have a 64-bit version of Windows, use the installer that is marked as the 64-bit version.
@@ -431,7 +445,7 @@ Navigate to the [IntelliJ](https://www.jetbrains.com/idea/download/#section=wind
 
 ![](./images/MVN-Version.jpg)
 
-### Step 5: Install PostgreSQL 10
+### Step 5: Install PostgreSQL
 
 In order to install PostgreSQL, please visit [PostgreSQL's official website](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
 
@@ -439,7 +453,7 @@ Once you've navigated to the website, you should see the following:
 
 ![Postgres Download Home](./images/postgres-download.PNG)
 
-Please look at the row for **version 10.XX** as we will downloading the latest Postgres 10 version. Select the download link which corresponds with your system and click it.
+Please look at the row for **version 14.XX** as we will downloading the latest Postgres 14 version. Select the download link which corresponds with your system and click it.
 
 You'll then be prompted to save the file. Click "Save File".
 
