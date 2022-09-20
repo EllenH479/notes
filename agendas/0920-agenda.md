@@ -54,12 +54,12 @@
 		- Compress the initial directory that you have using `tar`
 		- Extract it in a different repository
    - Redirection: Terminal-based (30 mins)
-	- Part 1:
-		- create an empty file which is going to contain a list of items of your choice
-		- without a text editor add a series of items to your list
-			- what is the difference between the > and >> operators?
-	- Part 2:
-		- create a text file that contains all the instances in which you've invoked `cat` from your bash history
+		- Part 1:
+			- create an empty file which is going to contain a list of items of your choice
+			- without a text editor add a series of items to your list
+				- what is the difference between the > and >> operators?
+		- Part 2:
+			- create a text file that contains all the instances in which you've invoked `cat` from your bash history
   
 ## Post-dismissal activities
   - Complete environment configuration if not done
