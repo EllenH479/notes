@@ -1,0 +1,12 @@
+  547  cat stream.txt > tiff.txt
+  551  cat tiff.txt 
+  552  echo $tiff.txt >> stream.txt
+  555  echo tiff.txt >> stream.txt
+  561  cat tiff.txt
+  562  cat tiff.txt >> stream.txt
+  564  cat tiff.txt >> stream.txt && echo '' > tiff.txt
+  566  cat tiff.txt 
+  600  history | grep tiff.txt
+  601  grep tiff.txt history
+  602  history | grep tiff.txt
+  603  history | grep tiff.txt > tiff-history.txt

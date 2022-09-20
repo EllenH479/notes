@@ -1,0 +1,38 @@
+ls -l: to view permissions levels for files
+
+drwxrwxrwx
+
+d = directory
+r = read
+w = write
+x = execute
+
+d   rwx   rwx     rwx
+    |	  |       |
+  owner   group   all users
+
+
+------------------
+chmod [permissions] file
+chmod 777 bash.sh
+chmod 747 bash.sh
+chmod 700 bash.sh
+chmod 514 bash.sh
+
+r = 4
+w = 2
+x = 1
+
+0 - no permissions
+1 - execute only
+2 - write only
+3 - write, execute
+4 - read only
+5 - read, execute
+6 - read, write
+7 - read, write, execute
+
+
+chmod +x <file-name> - granting execute permissions to all user levels 
+chmod -x <file-name> - revoke execute permissions to all user levels
+chmod +r <file-name> - granting read permissions to all user levels 
