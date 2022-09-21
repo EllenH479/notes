@@ -25,7 +25,7 @@
   - Bash Scripting: simple calculator
   	- Create a bash script that takes in 2 numbers and allows you to perform simple operations (add, subtract, multiply, divide)
 		- bonus:
-			- validate that the input is valid (ie: not 'aaa') and return a relevate error message otherwise 
+			- validate that the input is valid (ie: not 'aaa') and return a relevant error message otherwise 
 	- Resource: https://ryanstutorials.net/bash-scripting-tutorial/
   - curl activity: send requests to a remote server using curl
 	- send a POST request with your name
