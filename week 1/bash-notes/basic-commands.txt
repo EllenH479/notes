@@ -26,4 +26,9 @@ mv: move/rename files/directories
 tar: compress/extract files
 	- -cf to create zipped file
 		- -czf: for gzip compression algorithm
-	- -xf to extract a compressed file 
+	- -xf to extract a compressed file
+clear - clear console output
+echo - print to standard output
+chmod - modify file permissions
+history - shows the shell command history
+grep - used for searching data using regular expressions
